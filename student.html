@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<title>Customers Management System</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="jquery-3.3.1.min.js"></script>
+<script src="customers.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="header">
+    <div title="Page 2" id="Student">
+      <p>Student Management System</p>
+    </div>
+    <div id="topnav">
+      <ul>
+        <li>
+          <a href="index.html" id="btn">
+				<button class="btn"><i class="fa fa-home"></i></button>          
+			</a>
+        </li>
+        <li>
+          <a href="student.html">Add Student</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="content-wrapper">
+    <div id="content">
+		<form id="studentform">
+		<div>
+			<label>Surname :</label>
+			<div class="field">
+				<input type="text" name="lastname" id="lastname"/><span  class="error" style = "display:none;" id="lastmsg">Lastname cannot be empty.</span>
+			</div>
+		</div>
+		<div>
+			<label>Name: </label>
+			<div class="field">
+				<input type="text" name="name" id="name" pattern="[A-Za-z]{1,}" title ="Alphabets only." required/>
+				<span class="error" id="namemsg" style="display: none">Required and alphabets only.</span>
+			</div>
+		</div>
+			<div>
+				<label>Gender : </label>
+				<input type="radio" name="gender" class="gender"  value="Female" required title="Pick either Male of Female"/> Female
+				<input type="radio" name="gender" class="gender" value="Male"  required title="Pick either Male of Female"/> Male
+				<span class="error" id="gendermsg" style="display: none">Required and must be Male or Female.</span>
+				<br>
+			</div>
+			<div>
+				<label>Address : </label>
+				<div class="field">
+					<textarea id="address" required></textarea>
+				</div>
+			</div>
+			<div>
+				<label>Email : </label>
+				<div class="field">
+					<input type="email" name="email" id="email" title="Must be valid email">
+					<span class="error" id="emailmsg" style="display: none" required></span>
+				</div>
+			</div>
+			<div>
+				<label>Phone Number : </label>
+				<div class="field">
+					<input type="number" name="phone" id="phone"><span  class="error" style = "display:none;" id="nummsg">Enter valid number</span>
+				</div>
+			</div>
+			<input type="submit" id="InsertCustomer" value="Insert"> 
+			<input type="reset" id="reset" value="Cancel">
+		</form>
+		    </div>
+  </div>
+	<div>
+		<table width="100%" id="tblData" border="1">
+			<tr>
+				<th>ID</th>
+				<th>Last Name</th>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>Address</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>Actions</th>
+			</tr>
+		</table>
+	</div>
+  <div id="footer">Copyright © ITE - All rights Reserved</div>
+</div>
+</body>
+</html>
